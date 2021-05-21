@@ -1,0 +1,21 @@
+{
+  "name": "sql-editor-monorep",
+  "version": "1.0.0",
+  "description": "bundle front end and back end projects",
+  "main": "index.js",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "client": "npm run start --workspace=frontend",
+    "client:build": "npm run build --workspace=frontend",
+    "server": "npm run start --workspace=backend",
+    "start": "concurrently \"npm run server\" \"npm run client\" ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aiswarya",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.1.0"
+  }
+}

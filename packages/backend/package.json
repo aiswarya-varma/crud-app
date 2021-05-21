@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "execute sql commands with express and react",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "http-proxy-middleware": "^2.0.0",
+    "mysql": "2.18.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "React",
+    "express.js",
+    "MySQL",
+    "API"
+  ],
+  "author": "Aiswarya",
+  "license": "ISC"
+}
