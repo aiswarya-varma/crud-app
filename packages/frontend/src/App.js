@@ -1,28 +1,17 @@
-import React, { useState } from 'react';
-import { useQuery } from 'react-query';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Editor from './components/Editor';
-import Result from './components/Result';
-import Sidebar from './components/Sidebar';
-import { executeQuery } from './utils/api.js';
+import Connect from './components/Connect';
+import Home from './components/Home';
 
-function App() {
-  const [query, updateQuery] = useState("");
-
-  const { data, refetch } = useQuery(["users", query], () => executeQuery(query));
-
-  const handleChange = qry => updateQuery(qry);
-
-  const handleClick = () => refetch();
-
+const App = () => {
   return <div className="App">
-    <div className="sidenav">
-      <Sidebar handleMenuClick={handleChange} />
-    </div>
-    <div className="main">
-      <Editor handleChange={handleChange} handleClick={handleClick} />
-      <Result result={data} />
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/editor"><Home /></Route>
+        <Route path="/"><Connect /></Route>
+      </Switch>
+    </Router>
   </div>;
 }
 
