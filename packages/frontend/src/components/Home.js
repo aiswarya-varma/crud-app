@@ -4,11 +4,12 @@ import Editor from './Editor';
 import Result from './Result';
 import Sidebar from './Sidebar';
 import { executeQuery } from '../utils/api.js';
+import Logout from './Logout';
 
 const Home = () => {
-    const [query, updateQuery] = useState("");
+    const [query, updateQuery] = useState('');
 
-    const { data, refetch } = useQuery(["users", query], () => executeQuery(query));
+    const { data, refetch } = useQuery(["editor", query], () => executeQuery(query));
 
     const handleChange = qry => updateQuery(qry);
 
@@ -16,9 +17,10 @@ const Home = () => {
 
     return <div className="App">
         <div className="sidenav">
-            <Sidebar handleMenuClick={handleChange} />
+            {/* <Sidebar handleMenuClick={handleChange} /> */}
         </div>
         <div className="main">
+            <Logout />
             <Editor handleChange={handleChange} handleClick={handleClick} />
             <Result result={data} />
         </div>

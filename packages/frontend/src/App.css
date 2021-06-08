@@ -104,3 +104,10 @@
 .connect input[type="radio"], .connect label {
   padding-right: 10px;
 }
+.logout {
+  height: 100px;
+}
+
+.logout-btn {
+  float: right;
+}

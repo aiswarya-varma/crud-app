@@ -25,7 +25,7 @@ const Result = ({ result }) => {
     } = useTable({ columns, data })
 
     return (
-        <table {...getTableProps()} className="results">
+        <table {...getTableProps()} className="result">
             <thead>
                 {headerGroups.map(headerGroup => (
                     <tr className="header" {...headerGroup.getHeaderGroupProps()}>
